@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Cabin&family=Bungee+Shade&family=Alfa+Slab+One&display=swap");
+:root {
+  --color-peach: #ED938A;
+  --color-indigo: #435BB2;
+  --color-ultramarine: #031424;
+  --color-light-blue: #ABC6F9;
+  --color-dark-indigo: #1E2540;
+}
+
+
+body {
+    margin-top: 20px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    font-family: Roboto;
+    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    color: var(--color-light-blue);
+    background-color: var(--color-ultramarine);
+  }
+
+h1 {
+  font-family: Bungee Shade;
+  font-size: calc(30px + (90 - 30) * ((100vw - 300px) / (1600 - 300))); 
+}
+
+h2 {
+  font-family: Bungee Shade; 
+  font-size: calc(20px + (60 - 20) * ((100vw - 300px) / (1600 - 300)));
+}
+
+h3 {
+  font-family: Alfa Slab One;
+  color: var(--color-dark-indigo);
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+h4 {
+  font-family: Cabin;
+  color: var(--color-peach);
+  font-size: calc(16px + (30 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+
+h5 {
+  font-family: Cabin;
+  color: var(--color-peach);
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
