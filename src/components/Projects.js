@@ -1,72 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Row, Col, Card, Modal, Collapse } from "react-bootstrap";
-import mockexamapp_img from '../images/mockexamapp.PNG';
-import alexanderacademy_logo from '../images/alexanderacademy_logo.png';
-import ycarchive_img from '../images/ycarchive.PNG';
-import ycarchive_logo from '../images/ycarchive_logo.jpg';
-import stocktools_logo from '../images/stocktools_logo.png';
-import stocktools_img from '../images/stocktools.png';
 import link_icon from '../images/link.png';
 import github_icon from '../images/github_icon.png';
 import { StyledIcon } from './Header';
 import { StyledTechnology } from "./Experience";
 import { newTab } from "../util/functions";
-
-
-const projects = [
-    {
-        title: "MockExamApp",
-        url: "https://www.mockexamapp.com/exam-list/",
-        github: "https://github.com/BenTheNetizen/online-testing-app",
-        description: `Built a full-stack web application for tutoring company AlexanderAcademy.
-        Web app allows students to take both the SAT and ACT examinations using an intuitive interface that features an in-depth scoring
-        report, extended time options, and many more testing conveniences.`,
-        technologies: ["Django", "Postgres", "Heroku", "AWS S3", "JavaScript"],
-        image: mockexamapp_img,
-        logo: alexanderacademy_logo,
-    },
-    {
-        title: "YC Archive",
-        url: "https://www.ycarchive.com/",
-        github: "https://github.com/BenTheNetizen/YC-Archive",
-        description: `Built ecommerce website using Shopify Liquid for my custom vintage clothing company YC Archive. Features include text message reminders, 
-        embedded Instagram feed, email confirmations, and a custom checkout process.`,
-        technologes: ["Shopify Liquid", "Klaviyo", "Instafeed", "SMSBump"],
-        image: ycarchive_img,
-        logo: ycarchive_logo,
-    },
-    {
-        title: "StockTools",
-        url: "https://www.stocktools.co/",
-        github: "https://github.com/BenTheNetizen/StockTools",
-        description: `StockTools is a free-online resource for users to explore various stock-market related tools.
-        Primary features is "StockScraper," a Python application that takes a given subredd on Reddit and performs
-        natural language processing to find the hottest stocks in discussion.`,
-        technologies: ["Django", "PRAW Library", "NLP", "Openpyxl"],
-        image: stocktools_img,
-        logo: stocktools_logo,
-    },
-    {
-        title: "All About NLP (AAN)",
-        url: "https://aan.how/",
-        github: "https://github.com/IreneZihuiLi/AAN2021",
-        description: `The AAN Project is a database of papers, tutorials, surveys, lectures, and software that are relevant to NLP. NLP is rapidly growing,
-        and, as a result, participating in the field can seem daunting to a student or researcher. The AAN Project aims to provide a platform for learners 
-        to quickly find resources that can help them learn NLP. My role was to develop features on the site and maintain its database.`,
-        technologies: ["Python", "MySQL", "Django", "Apache Solr"],
-    },
-    {
-        title: "GoodWork", 
-        url: null,
-        github: "https://github.com/maxyuan6717/GoodWork",
-        description: `Why waste energy alone in the gym when you could be using that energy to both positively influence those around you and improve your health?
-        GoodWork is an android application that crawls volunteermatch.org for volunteer opportunities around you and uses machine learning to determine which opportunities should be pushed to the user.
-        The data that is crawled from the website is first uploaded to a Firebase realtime database. The android app can then access this data and display it to the user. 
-        The "10004.txt" file is the training data for the text classification routine within the crawler code, which uses linear regression to predict whether or not a certain volunteer opportunity requires any physical exertion.`,
-        technologies: ["Android Studio", "Java", "Firebase", "Text Classification", "Web Scraping"],
-    }
-]
+import { projects } from '../util/constants';
 
 const StyledImg = styled.img`
     width: 100%;
