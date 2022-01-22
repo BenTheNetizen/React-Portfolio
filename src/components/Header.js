@@ -5,10 +5,10 @@ import github_icon from '../images/github_icon.png';
 import linkedin_icon from '../images/linkedin_icon.png';
 import file_icon from '../images/file_icon.png';
 import profile_pic from '../images/profile_pic.jpg';
-import { colors, my_linkedin_url, my_github_url } from '../util/constants';
+import { colors, my_linkedin_url, my_github_url, resume_url } from '../util/constants';
 import { newTab } from '../util/functions';
-import '../App.css';
-
+import Typical from 'react-typical';
+import logo from '../images/logo.png';
 
 const StyledNav = styled(Nav)`
     && {
@@ -26,6 +26,15 @@ export const StyledIcon = styled.img`
     }
 `;
 
+const StyledLogo = styled.img`
+    height: 5vw;
+    width: 5vw;
+
+    @media (min-width: 768px) {
+        height: 7vw;
+        width: 7vw;
+    }
+`;
 const StyledAvatar = styled.img`
     border-radius: 50%;
     border: 7px solid #fff;
@@ -66,7 +75,6 @@ function SiteNavBar() {
                 <a href="#experience" className="m-3">Experience</a>
                 <a href="#projects" className="m-3">Projects</a>
                 <a href="#skills" className="m-3">Skills</a>
-                <a href="#blog" className="m-3">Blog</a>
             </StyledNav>
             </Navbar.Collapse>
         </Navbar>
@@ -86,12 +94,29 @@ function Header() {
                                 <h4>Hey, my name is</h4>
                                 <h1>Benjamin</h1>
                                 <h1>Chen</h1>
-                                <h4>I'm a software engineer</h4>
-                                <p>studying computer science at Yale. For any inquiries, you can reach me at <span style={{color:"var(--color-peach)"}}>benjamin.chen@yale.edu.</span></p>
+                                <div style={{display:'flex'}}>
+                                    <h4>I'm&nbsp;</h4>
+                                    <Typical
+                                        loop={Infinity}
+                                        wrapper="h4"
+                                        steps={[
+                                            'a software engineer 💻',
+                                            1000,
+                                            'an entrepreneur 🤝',
+                                            1000,
+                                            'a student 🎓',
+                                            1000,
+                                            'a rockstar 🎸 (wannabe) ',
+                                            1000,
+                                        ]}/>
+                                </div>
+                                
+                                <p>studying computer science at Yale. 
+                                    For any inquiries, you can reach me at <a style={{textDecoration:"none"}} href="mailto:benjamin.chen@yale.edu"><span style={{color:"var(--color-peach)"}}>benjamin.chen@yale.edu.</span></a></p>
                                 <Row style={{display: 'flex', justifyContent: 'flex-start'}}>
                                     <StyledIcon src={github_icon} onClick={() => newTab(my_github_url)}/>
                                     <StyledIcon src={linkedin_icon} onClick={() => newTab(my_linkedin_url)}/>
-                                    <StyledIcon src={file_icon}/>
+                                    <StyledIcon src={file_icon} onClick={() => newTab(resume_url)}/>
                                 </Row>
                             </Col>
                             <Col style={{display: 'flex', justifyContent: 'center'}}>

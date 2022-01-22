@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Row, Col, Card, Modal, Button, Collapse } from "react-bootstrap";
+import { Row, Col, Card, Modal, Collapse } from "react-bootstrap";
 import mockexamapp_img from '../images/mockexamapp.PNG';
 import alexanderacademy_logo from '../images/alexanderacademy_logo.png';
 import ycarchive_img from '../images/ycarchive.PNG';
@@ -10,7 +10,9 @@ import stocktools_img from '../images/stocktools.png';
 import link_icon from '../images/link.png';
 import github_icon from '../images/github_icon.png';
 import { StyledIcon } from './Header';
+import { StyledTechnology } from "./Experience";
 import { newTab } from "../util/functions";
+
 
 const projects = [
     {
@@ -58,7 +60,7 @@ const projects = [
         title: "GoodWork", 
         url: null,
         github: "https://github.com/maxyuan6717/GoodWork",
-        description: `Why waste energy alone in the gym when you could be using that energy to both positively influence those around you and improve your health.
+        description: `Why waste energy alone in the gym when you could be using that energy to both positively influence those around you and improve your health?
         GoodWork is an android application that crawls volunteermatch.org for volunteer opportunities around you and uses machine learning to determine which opportunities should be pushed to the user.
         The data that is crawled from the website is first uploaded to a Firebase realtime database. The android app can then access this data and display it to the user. 
         The "10004.txt" file is the training data for the text classification routine within the crawler code, which uses linear regression to predict whether or not a certain volunteer opportunity requires any physical exertion.`,
@@ -136,32 +138,19 @@ function ProjectCard(props) {
     );
 }
 
-function Example() {
-    const [open, setOpen] = useState(false);
-  
-    return (
-      <>
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
-        <Collapse in={open}>
-          <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </Collapse>
-      </>
-    );
-  }
+const StyledDiv = styled.div`
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+`;
 
 function Projects() {
+    const [open, setOpen] = useState(false);
+    const [isViewMore, setIsViewMore] = useState(false);
+
     return (
-        <div className="mb-5">
+        <div id="projects" className="mb-5">
             <h2>Projects</h2>
             <Row style={{marginTop: '30px'}}>
                 {projects.slice(0,3).map((project, index) => {
@@ -180,8 +169,39 @@ function Projects() {
                     );
                 })}
                 {/* View More projects functionality */}
-                <h4 className='mt-3' style={{textAlign: 'right'}}>View More</h4>
-                <Example />
+                <h4 
+                    className='mt-3'
+                    onClick={() => setOpen(!open)}
+                    aria-controls="example-collapse-text"
+                    aria-expanded={open}
+                    style={{display: 'flex', justifyContent: 'right'}}
+                >
+                    <StyledDiv onClick={() => setIsViewMore(!isViewMore)}>
+                        {isViewMore ? 'View Less' : 'View More'}
+                    </StyledDiv>
+                </h4>
+
+                <Collapse in={open}>
+                    <div id="example-collapse-text">
+                    {projects.slice(3).map((project, index) => {
+                    return (
+                        <Row key={index} className="mt-3">
+                            <Col>
+                                <h4 className="mb-3">{project.title}</h4>
+                                <StyledIcon style={{width:'2rem', height:'2rem'}} src={github_icon} onClick={() => newTab(project.github)}/>
+                                <StyledIcon style={{width:'2rem', height:'2rem', marginLeft:'10px'}} src={link_icon} onClick={() => newTab(project.url)}/> 
+                            </Col>
+                            <p className="mt-3">{project.description}</p>
+                            <Col>
+                            {project.technologies.map((tech, index) => {
+                                return <StyledTechnology variant="outline-primary" key={index}>{tech}</StyledTechnology>;
+                            })}
+                            </Col>
+                        </Row>
+                    );
+                })}
+                    </div>
+                </Collapse>
             </Row>
         </div> 
         );

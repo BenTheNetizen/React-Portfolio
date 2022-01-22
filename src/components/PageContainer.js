@@ -3,14 +3,19 @@ import Header from './Header';
 import Experience from './Experience';
 import Projects from './Projects';
 import Skills from './Skills';
+import Footer from './Footer';
+import FadeIn from 'react-fade-in';
 
 function PageContainer() {
     return (
         <div>
-            <Header />
-            <Experience />
-            <Projects />
-            <Skills />
+            <FadeIn>
+                <Header />
+                <Experience />
+                <Projects />
+                <Skills />
+                <Footer />
+            </FadeIn>
         </div>
     );
 }

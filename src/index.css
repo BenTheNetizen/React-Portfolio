@@ -12,6 +12,7 @@ body {
     margin-top: 20px;
     margin-left: 8vw;
     margin-right: 8vw;
+    margin-bottom: 40px;
     font-family: Roboto;
     font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
     color: var(--color-light-blue);
@@ -44,4 +45,18 @@ h5 {
   font-family: Cabin;
   color: var(--color-peach);
   font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+.fadeOut{
+  opacity:0;
+  width:0;
+  height:0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+
+}
+.fadeIn{
+  opacity:1;
+  width:100px;
+  height:100px;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
 }

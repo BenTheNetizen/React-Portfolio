@@ -53,7 +53,7 @@ const experiences = [
   },
 ];
 
-const StyledTechnology = styled(Button)`
+export const StyledTechnology = styled(Button)`
     color: var(--color-indigo) !important;
     border-color: var(--color-indigo) !important;
     box-shadow: none;
@@ -62,19 +62,16 @@ const StyledTechnology = styled(Button)`
         color: var(--color-peach) !important;
         cursor: default !important;
         transform: translateY(-5px);
-        box-shadow: 0 8px 6px -6px var(--color-peach);
+        box-shadow: 0 8px 6px -6px var(--color-peach) !important;
     }
     &:focus {
-        box-shadow: 0 8px 6px -6px var(--color-peach);
-    }
-    &: active {
         box-shadow: none !important;
     }
 `;
 
 function Experience() {
   return (
-    <div className="mb-5">
+    <div id="experience" className="mb-5">
       <h2>Experience</h2>
       {experiences.map((experience, index) => {
         return (
