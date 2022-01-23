@@ -1,6 +1,6 @@
 # Viewing The Site
 
-To see the live site, visit benjaminchen.io! 
+To see the live site, visit [benjaminchen.io!](benjaminchen.io)
 
 
 ## Setting Up Local Server
