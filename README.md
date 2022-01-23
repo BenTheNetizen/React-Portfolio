@@ -2,8 +2,8 @@
 
 To see the live site, visit benjaminchen.io! 
 
-# Setting Up Local Server
-## Available Scripts
+
+## Setting Up Local Server
 
 In the project directory, you can run:
 
