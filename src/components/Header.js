@@ -8,7 +8,7 @@ import profile_pic from '../images/profile_pic.jpg';
 import { colors, my_linkedin_url, my_github_url } from '../util/constants';
 import { newTab } from '../util/functions';
 import Typical from 'react-typical';
-import logo from '../images/logo.png';
+// import logo from '../images/logo.png';
 import resumePDF from '../static/benjamin-chen-resume.pdf';
 
 const StyledNav = styled(Nav)`
@@ -27,15 +27,16 @@ export const StyledIcon = styled.img`
     }
 `;
 
-const StyledLogo = styled.img`
-    height: 5vw;
-    width: 5vw;
+// const StyledLogo = styled.img`
+//     height: 5vw;
+//     width: 5vw;
 
-    @media (min-width: 768px) {
-        height: 7vw;
-        width: 7vw;
-    }
-`;
+//     @media (min-width: 768px) {
+//         height: 7vw;
+//         width: 7vw;
+//     }
+// `;
+
 const StyledAvatar = styled.img`
     border-radius: 50%;
     border: 7px solid #fff;
