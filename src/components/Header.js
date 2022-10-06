@@ -5,10 +5,11 @@ import github_icon from '../images/github_icon.png';
 import linkedin_icon from '../images/linkedin_icon.png';
 import file_icon from '../images/file_icon.png';
 import profile_pic from '../images/profile_pic.jpg';
-import { colors, my_linkedin_url, my_github_url, resume_url } from '../util/constants';
+import { colors, my_linkedin_url, my_github_url } from '../util/constants';
 import { newTab } from '../util/functions';
 import Typical from 'react-typical';
 import logo from '../images/logo.png';
+import resumePDF from '../static/benjamin-chen-resume.pdf';
 
 const StyledNav = styled(Nav)`
     && {
@@ -116,7 +117,7 @@ function Header() {
                                 <Row style={{display: 'flex', justifyContent: 'flex-start'}}>
                                     <StyledIcon src={github_icon} onClick={() => newTab(my_github_url)}/>
                                     <StyledIcon src={linkedin_icon} onClick={() => newTab(my_linkedin_url)}/>
-                                    <StyledIcon src={file_icon} onClick={() => newTab(resume_url)}/>
+                                    <StyledIcon src={file_icon} onClick={() => newTab(resumePDF)}/>
                                 </Row>
                             </Col>
                             <Col style={{display: 'flex', justifyContent: 'center'}}>
