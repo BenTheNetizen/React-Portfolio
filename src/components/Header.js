@@ -5,11 +5,16 @@ import github_icon from '../images/github_icon.png';
 import linkedin_icon from '../images/linkedin_icon.png';
 import file_icon from '../images/file_icon.png';
 import profile_pic from '../images/profile_pic.jpg';
+<<<<<<< HEAD
 import bike_pic from '../images/bike_pic.jpg';
 import { colors, my_linkedin_url, my_github_url, resume_url } from '../util/constants';
+=======
+import { colors, my_linkedin_url, my_github_url } from '../util/constants';
+>>>>>>> 6e95e1aad82c77ae8149d4faa93d2a6be93d50b3
 import { newTab } from '../util/functions';
 import Typical from 'react-typical';
-import logo from '../images/logo.png';
+// import logo from '../images/logo.png';
+import resumePDF from '../static/benjamin-chen-resume.pdf';
 
 const StyledNav = styled(Nav)`
     && {
@@ -27,15 +32,16 @@ export const StyledIcon = styled.img`
     }
 `;
 
-const StyledLogo = styled.img`
-    height: 5vw;
-    width: 5vw;
+// const StyledLogo = styled.img`
+//     height: 5vw;
+//     width: 5vw;
 
-    @media (min-width: 768px) {
-        height: 7vw;
-        width: 7vw;
-    }
-`;
+//     @media (min-width: 768px) {
+//         height: 7vw;
+//         width: 7vw;
+//     }
+// `;
+
 const StyledAvatar = styled.img`
     border-radius: 50%;
     border: 7px solid #fff;
@@ -117,7 +123,7 @@ function Header() {
                                 <Row style={{display: 'flex', justifyContent: 'flex-start'}}>
                                     <StyledIcon src={github_icon} onClick={() => newTab(my_github_url)}/>
                                     <StyledIcon src={linkedin_icon} onClick={() => newTab(my_linkedin_url)}/>
-                                    <StyledIcon src={file_icon} onClick={() => newTab(resume_url)}/>
+                                    <StyledIcon src={file_icon} onClick={() => newTab(resumePDF)}/>
                                 </Row>
                             </Col>
                             <Col style={{display: 'flex', justifyContent: 'center'}}>

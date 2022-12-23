@@ -15,7 +15,10 @@ function Word({ children, ...props }) {
   const fontProps = { fontFamily: 'Cabin', fontSize: 2.5, letterSpacing: -0.05, lineHeight: 1, 'material-toneMapped': false }
   const ref = useRef()
   const [hovered, setHovered] = useState(false)
-  const over = (e) => (e.stopPropagation(), setHovered(true))
+  const over = (e) => {
+    e.stopPropagation() 
+    setHovered(true)
+  }
   const out = () => setHovered(false)
   // Change the mouse cursor on hover
   useEffect(() => {
