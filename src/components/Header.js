@@ -4,13 +4,13 @@ import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
 import github_icon from "../images/github_icon.png";
 import linkedin_icon from "../images/linkedin_icon.png";
 import file_icon from "../images/file_icon.png";
-import profile_pic from "../images/profile_pic.jpg";
+// import profile_pic from "../images/profile_pic.jpg";
 import bike_pic from "../images/bike_pic.jpg";
 import {
   colors,
   my_linkedin_url,
   my_github_url,
-  resume_url,
+//   resume_url,
 } from "../util/constants";
 import { newTab } from "../util/functions";
 import Typical from "react-typical";
